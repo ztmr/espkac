@@ -1,0 +1,22 @@
+-- Resources:
+--   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen
+--   http://en.wikipedia.org/wiki/SPKAC
+SPKAC DEFINITIONS ::=
+BEGIN
+
+  IMPORTS
+    AlgorithmIdentifier, SubjectPublicKeyInfo
+      FROM AuthenticationFramework {joint-iso-itu-t(2) ds(5) module(1)
+        authenticationFramework(7) 3};
+
+   PublicKeyAndChallenge ::= SEQUENCE {
+       spki SubjectPublicKeyInfo,
+       challenge IA5String
+   }
+   SignedPublicKeyAndChallenge ::= SEQUENCE {
+       publicKeyAndChallenge PublicKeyAndChallenge,
+       signatureAlgorithm AlgorithmIdentifier,
+       signature BIT STRING
+   }
+
+END

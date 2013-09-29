@@ -1,0 +1,12 @@
+{application, espkac,
+ [
+  {description, "Erlang SignedPublicKeyAndChallenge decoder"},
+  {vsn, "semver"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  %{mod, { espkac_app, []}},
+  {env, []}
+ ]}.
